@@ -1,4 +1,4 @@
-# git-tutorial
+# git-good tutorial
 The tutorial to git-Good in SDU Vikings
 
 ## Git commands 
@@ -22,6 +22,12 @@ Git is essentially just a tool that can find
 * CI/CD pipeline
     * Automatic testing
     * Automatic image building and publishing to docker hub or github packages
+
+## Best practices
+    Atomic commits
+    Branch nameing conventions
+    Pull requests
+    Good commit messages
 
 ## 4 main commands of git 
     `git clone <url>`
@@ -58,7 +64,7 @@ Here is a list of other usefull git commands
 This command is used to clean up commit history and make it eaiser to read for everybody and will also catch merging errors before pushing to the github repository.  
 
     git blame
->  `git blame` is way to essentially blame other people for the code they have written. This tool works simply by typing `git blame ./filename` and will show you line by line when and who made the given line in the document. this helps to find out from who and were a given part of the came from.
+>  `git blame` is way to essentially blame other people for the code they have written. This tool works simply by typing `git blame ./filename` and will show you line by line when and who made the given line in the document. this helps to find out from who and were a given part of the code came from.
 
 
 # Git ease of life 
