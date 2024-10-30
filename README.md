@@ -24,13 +24,25 @@ Git is essentially just a tool that can find
     * Automatic image building and publishing to docker hub or github packages
 
 ## Best practices
-    Atomic commits
-    Branch nameing conventions
-    Pull requests
-    Good commit messages
+Make atomic commits, make commits that only perterain to the feature you are working on. 
+
+Branch nameing conventions, when naming a branch it should fall into 5 different catogoriez: 
+- `feature` : used when implementing features in the repo
+- `test` : used when creating or simply testing code in a repo
+- `bugfix` : used when making indept permenent bug fixes in the code
+- `hotfix` : used when making a quick non permenant fix for an issue found in the code
+
+theses keywords will be the first part of the name for a branch, this should be followed by slash `/` and then a semantically sound name so that other people reading the branch name know what the branch is being used for, when naming the branch dashes `-` should be used instead of spaces. an example of this can be seen below:
+
+    feature/rasberrypi-pwm-control-system
+
+
+commit messages, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done.
+
+Pull requests, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
 
 ## 4 main commands of git 
-    `git clone <url>`
+    git clone <url>
 >git clone is making clones of repositories from github into local direcotires on your own machibnes.
 
     
@@ -76,4 +88,6 @@ an aliass can be set like so `git config --global alias.NameForCustomCommand Com
 ## Links for tutorials and other resources (and intermediate list of things i properly forget)
 * change interactive rebase from vim to vsCode
 * git gui for these features
+
+
 
