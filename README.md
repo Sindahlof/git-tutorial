@@ -12,7 +12,7 @@ Overview of all git commands used in this tutorial
 |`git log`                  |shows all ealire commit messages for curren branch                                                                                                             |--oneline --graph|
 |`git switch <Name>`        |used for switching between banches                                                                                                                             |none|
 |`git branch <Name>`        |used for creating new branches                                                                                                                                 |none|
-|`git rebase`               |used for rebasing current commit with other commits                                                                                                            |-I|
+|`git rebase`               |used for rebasing current commit with other  commits or branches                                                                                                            |-I|
 |`git blame`                |used for seeing what commits were made by what user or what specific line of code is made by a specific user                                                   |none|
 
 ## What is git?
@@ -24,9 +24,8 @@ Git is essentially just a tool that can find
     * Automatic image building and publishing to docker hub or github packages
 
 ## Best practices
-Make atomic commits, make commits that only perterain to the feature you are working on. 
 
-Branch nameing conventions, when naming a branch it should fall into 5 different catogoriez: 
+`Branch nameing conventions`, when naming a branch it should fall into 5 different catogoriez: 
 - `feature` : used when implementing features in the repo
 - `test` : used when creating or simply testing code in a repo
 - `bugfix` : used when making indept permenent bug fixes in the code
@@ -36,10 +35,11 @@ theses keywords will be the first part of the name for a branch, this should be 
 
     feature/rasberrypi-pwm-control-system
 
+`Make atomic commits`, make commits that only perterain to the feature you are working on. This means if you are working on a feature and discover a bug you do not fix the bug on the feature brannch but make a bugfix branch and fix the bug there, this is to ensure each branch keeps its designated scope set forth by the task it pertaince to.
 
-commit messages, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done.
+`commit messages`, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done. This mean if the descriptive text is "bug fix" the body could be something like "Fixed a bug found in the google provided terraform module in file cloud-run-instance.tf file, that made all cloud-run instance be created twice" in here you can read that the bug was fixed since it created two instance of the same resources (the why), and the message also indicates the what, the bug was fixed in the cloud-run-instance-tf file but does not describe how this was done no specifics about the file itself.
 
-Pull requests, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
+`Pull requests`, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
 
 ## Github Workflow
 workflows in git is a formilized ay of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings driveless subteam are as follows.q
