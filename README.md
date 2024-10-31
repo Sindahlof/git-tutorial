@@ -1,5 +1,5 @@
 # git-good tutorial
-The tutorial to git-Good in SDU Vikings
+The tutorial to git-Good in SDU Vikings Driverless Sub-team
 
 ## Git commands 
 Overview of all git commands used in this tutorial
@@ -42,7 +42,7 @@ commit messages, all commit messages needs to be multiline, the first line shoul
 Pull requests, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
 
 ## Github Workflow
-workflows in git is a formilized ay of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings are as follows.
+workflows in git is a formilized ay of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings driveless subteam are as follows.q
 
 - created a new branch using the naming conventions mentioned ealier
 - Work on the the feature, bugfix, testing or hotfix depending on the work done on the branch
