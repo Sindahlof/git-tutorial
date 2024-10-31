@@ -50,7 +50,7 @@ workflows in git is a formilized ay of working with branches and what stradegies
 - write documentation for the documentation if relevant (hot fixes, and testing might not need documentation)
 - rebase the branch with the main branch
 - open a pull request
-- pull request is reviewed and accepted and the branch is closed
+- pull request is reviewed and accepted and the branch is closed (remember to use squash commit and not merge commit to keep the commit history clean)
 
 The rebasing of the branch with main is done to ensure a linear commit history of the main branch.
 
