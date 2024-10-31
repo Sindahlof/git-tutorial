@@ -41,6 +41,19 @@ commit messages, all commit messages needs to be multiline, the first line shoul
 
 Pull requests, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
 
+## Github Workflow
+workflows in git is a formilized ay of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings are as follows.
+
+- created a new branch using the naming conventions mentioned ealier
+- Work on the the feature, bugfix, testing or hotfix depending on the work done on the branch
+- test that all new code is working as expected
+- write documentation for the documentation if relevant (hot fixes, and testing might not need documentation)
+- rebase the branch with the main branch
+- open a pull request
+- pull request is reviewed and accepted and the branch is closed
+
+The rebasing of the branch with main is done to ensure a linear commit history of the main branch.
+
 ## 4 main commands of git 
     git clone <url>
 >git clone is making clones of repositories from github into local direcotires on your own machibnes.
