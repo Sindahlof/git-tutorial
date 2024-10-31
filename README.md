@@ -1,5 +1,5 @@
 # git-good tutorial
-The tutorial to git-Good in SDU Vikings
+The tutorial to git-Good in SDU Vikings Driverless Sub-team
 
 ## Git commands 
 Overview of all git commands used in this tutorial
@@ -12,34 +12,49 @@ Overview of all git commands used in this tutorial
 |`git log`                  |shows all ealire commit messages for curren branch                                                                                                             |--oneline --graph|
 |`git switch <Name>`        |used for switching between banches                                                                                                                             |none|
 |`git branch <Name>`        |used for creating new branches                                                                                                                                 |none|
-|`git rebase`               |used for rebasing current commit with other commits                                                                                                            |-I|
+|`git rebase`               |used for rebasing current commit with other  commits or branches                                                                                                            |-I|
 |`git blame`                |used for seeing what commits were made by what user or what specific line of code is made by a specific user                                                   |none|
 
 ## What is git?
-Git is essentially just a tool that can find 
+Git is a version controll tool, this means that git or in this case github saves your files but not in a delta-based way as most other version controll systems do but as a stream of snapshots and creates links between these snapshots. 
+Practically git works by moving between 3 states. a working directory, a staging area and the .git directory. when clonning a reposotory you are copying the working directory down to you local machine, when using commands like `git add ./filePath` you are moving files into the staging area and when using `git commit` you are commiting your changes to the .git directory. Thoese who have used git before will notices that simply making a commit does not publish the commit to github this is because the command `git push` is used to push this commit to the online repository.
+This is the basics of how git works, for more information go down to the [relevant links](#relevant-links) section. 
 
-* Pull requests
-* CI/CD pipeline
-    * Automatic testing
-    * Automatic image building and publishing to docker hub or github packages
 
 ## Best practices
-Make atomic commits, make commits that only perterain to the feature you are working on. 
 
-Branch nameing conventions, when naming a branch it should fall into 5 different catogoriez: 
+`Branch nameing conventions`, when naming a branch it should fall into 5 different catogoriez: 
 - `feature` : used when implementing features in the repo
 - `test` : used when creating or simply testing code in a repo
 - `bugfix` : used when making indept permenent bug fixes in the code
 - `hotfix` : used when making a quick non permenant fix for an issue found in the code
 
-theses keywords will be the first part of the name for a branch, this should be followed by slash `/` and then a semantically sound name so that other people reading the branch name know what the branch is being used for, when naming the branch dashes `-` should be used instead of spaces. an example of this can be seen below:
+theses keywords will be the first part of the name for a branch, this should be followed by slash `/` and then a semantically meaningfull name so that other people reading the branch name know what the branch is being used for, when naming the branch dashes `-` should be used instead of spaces. an example of this can be seen below:
 
     feature/rasberrypi-pwm-control-system
 
+`Make atomic commits`, make commits that only perterain to the feature you are working on. This means if you are working on a feature and discover a bug you do not fix the bug on the feature brannch but make a bugfix branch and fix the bug there, this is to ensure each branch keeps its designated scope set forth by the task it pertaince to.
 
-commit messages, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done.
+`commit messages`, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done. This mean if the descriptive text is "bug fix" the body could be something like "Fixed a bug found in the google provided terraform module in file cloud-run-instance.tf, that made all cloud-run instance be created twice" in here you can read that the bug was fixed since it created two instance of the same resources (the why), and the message also indicates the what, the bug was fixed in the cloud-run-instance-tf file but does not describe how this was done no specifics about the file itself. Another way to think about commit messages is to to future proof your work so that anyone reading the commit message understand what is going on even if a significatn time has elapsed. to ensure this here are 4 points to consider when writing a commit message.
+* Why are the changes made?
+* what does the change pertain to? 
+* why is the change made?
+* what does the changes refrence?
 
-Pull requests, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
+`Pull requests`, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
+
+## Github Workflow
+workflows in git is a formilized way of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings driverless subteam we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings driveless subteam are as follows:
+
+- created a new branch using the naming conventions mentioned ealier
+- Work on the the feature, bugfix, testing or hotfix depending on the work done on the branch
+- test that all new code is working as expected
+- write documentation for the branch if relevant (hot fixes, and testing might not need documentation)
+- rebase the branch with the main branch
+- open a pull request
+- pull request is reviewed and accepted and the branch is closed (remember to use squash commit and not merge commit to keep the commit history clean)
+
+The rebasing of the branch with main is done to ensure a linear commit history of the main branch.
 
 ## 4 main commands of git 
     git clone <url>
@@ -79,15 +94,28 @@ This command is used to clean up commit history and make it eaiser to read for e
 >  `git blame` is way to essentially blame other people for the code they have written. This tool works simply by typing `git blame ./filename` and will show you line by line when and who made the given line in the document. this helps to find out from who and were a given part of the code came from.
 
 
-# Git ease of life 
+    git stash and git stash pop
+>   `git stash` and `git stash pop` are ways of taking the current changes not commited on a branch removing these changes and store them temporaly on the working machine, the command `git stash pop` is used to take the saved stash and apply it to the repo again, this will also remove the stored git stash. 
+
+## gitignore files
+.gitignore files are a way to make sure certain  files are always excluded from being commited to a repository. to create a gitignore file use the command touch .gitignore, this will create an empty gitignore file. To actually ignore files you need to add what is to be ignored, the way to add file that should be ignored can be done in two main ways either based on the file exentension `*.zip` by adding this to a gitignore file all .zip files in the local repository will be ignored. The other way is to do it by names `folder1` by adding this to the .gitignore file the folder named folder1 will be ignored by git when adding to the staging area.
+
+## Git ease of life 
 When using git some commands can be rather bothersome to write out if you use git daily therefore git offeres an ease of life option called aliasses. Aliasses are your own custom commands that git interpets in a certain way.
 an aliass can be set like so `git config --global alias.NameForCustomCommand Command` a more concrete example could look like this `git config --global alias.st status` with this alias you now only have to type `git st` to get the current status of your git repostory.
 
 
+## Relevant Links
+I implore anyone reading this tutorial that mainly uses gui tools to google the terms used as these are universal across all git guis used for controlling git
 
-## Links for tutorials and other resources (and intermediate list of things i properly forget)
-* change interactive rebase from vim to vsCode
-* git gui for these features
+* [Git documentation](https://git-scm.com/doc)
+* [Github Desktop Documentation](https://docs.github.com/en/desktop)
+* [Visual Studio Code git integration documentation](https://code.visualstudio.com/docs/sourcecontrol/overview)
+* Ask Jacob about clean commit history with squashing previous commits into single commits that explains what has been done.
+
+
+
+
 
 
 
