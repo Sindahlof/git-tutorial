@@ -37,17 +37,17 @@ theses keywords will be the first part of the name for a branch, this should be 
 
 `Make atomic commits`, make commits that only perterain to the feature you are working on. This means if you are working on a feature and discover a bug you do not fix the bug on the feature brannch but make a bugfix branch and fix the bug there, this is to ensure each branch keeps its designated scope set forth by the task it pertaince to.
 
-`commit messages`, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done. This mean if the descriptive text is "bug fix" the body could be something like "Fixed a bug found in the google provided terraform module in file cloud-run-instance.tf file, that made all cloud-run instance be created twice" in here you can read that the bug was fixed since it created two instance of the same resources (the why), and the message also indicates the what, the bug was fixed in the cloud-run-instance-tf file but does not describe how this was done no specifics about the file itself.
+`commit messages`, all commit messages needs to be multiline, the first line should be a short discription of what is done. Short descriptions are written in imparative, "fix bug" and not "fixed bug". a longer commit messaged called the body is added below the short description, this should explain what has been done and why, but not how it has been done. This mean if the descriptive text is "bug fix" the body could be something like "Fixed a bug found in the google provided terraform module in file cloud-run-instance.tf, that made all cloud-run instance be created twice" in here you can read that the bug was fixed since it created two instance of the same resources (the why), and the message also indicates the what, the bug was fixed in the cloud-run-instance-tf file but does not describe how this was done no specifics about the file itself.
 
 `Pull requests`, before merging into any main branch a pull request is created and a reviewer is assigned. Before making pull requests all code is tested before making a pull request.
 
 ## Github Workflow
-workflows in git is a formilized ay of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings driveless subteam are as follows.q
+workflows in git is a formilized way of working with branches and what stradegies is used when creating branches, a couple of the most popular workflows are git workflow, github workflow, gitlab workflow and one flow. In sdu vikings driverless subteam we work with the github work flow, with a little twists. The github workflow is a simple workflow were a new branch is created from the master, when all work is done, a pull request is created and the branch is merged with the main branch. the formal workflow of sdu vikings driveless subteam are as follows:
 
 - created a new branch using the naming conventions mentioned ealier
 - Work on the the feature, bugfix, testing or hotfix depending on the work done on the branch
 - test that all new code is working as expected
-- write documentation for the documentation if relevant (hot fixes, and testing might not need documentation)
+- write documentation for the branch if relevant (hot fixes, and testing might not need documentation)
 - rebase the branch with the main branch
 - open a pull request
 - pull request is reviewed and accepted and the branch is closed (remember to use squash commit and not merge commit to keep the commit history clean)
@@ -101,6 +101,7 @@ an aliass can be set like so `git config --global alias.NameForCustomCommand Com
 ## Links for tutorials and other resources (and intermediate list of things i properly forget)
 * change interactive rebase from vim to vsCode
 * git gui for these features
+* .gitignore filer
 
 
 
