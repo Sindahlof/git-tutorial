@@ -103,5 +103,8 @@ an aliass can be set like so `git config --global alias.NameForCustomCommand Com
 * git gui for these features
 * .gitignore filer
 
+Github desktop test notes
+* git log works by viewing history, but it is harder to read.
+* 
 
 
