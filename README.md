@@ -98,6 +98,9 @@ an aliass can be set like so `git config --global alias.NameForCustomCommand Com
 
 
 
+
+This is a test
+
 ## Links for tutorials and other resources (and intermediate list of things i properly forget)
 * change interactive rebase from vim to vsCode
 * git gui for these features
