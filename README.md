@@ -16,7 +16,9 @@ Overview of all git commands used in this tutorial
 |`git blame`                |used for seeing what commits were made by what user or what specific line of code is made by a specific user                                                   |none|
 
 ## What is git?
-Git is essentially just a tool that can find 
+Git is a version controll tool, this means that git or in this case github saves your files but not in a delta-based way as most other version controll systems do but as a stream of snapshots and creates links between these snapshots. 
+Practically git works by moving between 3 states. a working directory, a staging area and the .git directory. when clonning a reposotory you are copying the working directory down to you local machine, when using commands like `git add ./filePath` you are moving files into the staging area and when using `git commit` you are commiting your changes to the .git directory. Thoese who have used git before will notices that simply making a commit does not publish the commit to github this is because the command `git push` is used to push this commit to the online repository.
+This is the basics of how git works, for more information go down to the [relevant links](#relevant-links) section. 
 
 * Pull requests
 * CI/CD pipeline
@@ -92,25 +94,22 @@ This command is used to clean up commit history and make it eaiser to read for e
 >  `git blame` is way to essentially blame other people for the code they have written. This tool works simply by typing `git blame ./filename` and will show you line by line when and who made the given line in the document. this helps to find out from who and were a given part of the code came from.
 
 
-# Git ease of life 
+    git stash and git stash pop
+>   `git stash` and `git stash pop` are ways of taking the current changes not commited on a branch removing these changes and store them temporaly on the working machine, the command `git stash pop` is used to take the saved stash and apply it to the repo again, this will also remove the stored git stash. 
+
+## gitignore files
+
+## Git ease of life 
 When using git some commands can be rather bothersome to write out if you use git daily therefore git offeres an ease of life option called aliasses. Aliasses are your own custom commands that git interpets in a certain way.
 an aliass can be set like so `git config --global alias.NameForCustomCommand Command` a more concrete example could look like this `git config --global alias.st status` with this alias you now only have to type `git st` to get the current status of your git repostory.
 
 
+## Relevant Links
+I implore anyone reading this tutorial that mainly uses gui tools to google the terms used as these are universal across all git guis used for controlling git
 
-
-This is a test
-
-## Links for tutorials and other resources (and intermediate list of things i properly forget)
-* change interactive rebase from vim to vsCode
-* git gui for these features
+* git documentation link
+* vs code link
 * .gitignore filer
 
-Github desktop test notes
-* git log works by viewing history, but it is harder to read.
-* git add is a menu
-* git commit is intuative
-* stashing changes is intuative and shows up right over the commit menu and can be restored when clicked on
-* 
 
 
