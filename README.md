@@ -105,6 +105,9 @@ an aliass can be set like so `git config --global alias.NameForCustomCommand Com
 
 Github desktop test notes
 * git log works by viewing history, but it is harder to read.
+* git add is a menu
+* git commit is intuative
+* stashing changes is intuative and shows up right over the commit menu and can be restored when clicked on
 * 
 
 
